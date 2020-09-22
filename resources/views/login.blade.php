@@ -26,7 +26,7 @@
             <form action="{{ url('/login') }}" method="POST">
                 @csrf
                 <h3>Sign In</h3>
-                <div class="form-holder" @error('username') style="margin-bottom: 0" @enderror>
+                {{-- <div class="form-holder" @error('username') style="margin-bottom: 0" @enderror>
                     <span class="lnr lnr-user"></span>
                     <input type="text" class="form-control" value="{{ old('username') }}" name="username" placeholder="Username">
                 </div>
@@ -39,9 +39,16 @@
                 </div>
                 @error('password')
                 <small style="color: red; margin-left:40px">{{ $message }}</small>
-                @enderror
-                <button type="submit">
-                    <span>Sign In</span>
+                @enderror --}}
+
+                <input name="username" type="hidden" id="username">
+                <input name="password" type="hidden" id="password">
+
+                <button type="submit" onclick="login(1)">
+                    <span>Sign In Teacher</span>
+                </button>
+                <button type="submit" onclick="login(2)">
+                    <span>Sign In Student</span>
                 </button>
                 <br>
                 <p style="float: right"><a href="{{ url('/register') }}"> Sign Up</a></p>
@@ -49,6 +56,21 @@
             <img src="{{ asset('assets/image-2.png') }}" alt="" class="image-2">
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+    <script>
+		function login(id){
+			if(id == 1){
+				$('#username').val('admin');
+				$('#password').val('admin');
+			}else{
+				$('#username').val('user');
+				$('#password').val('user');
+			}
+		}
+	</script>
+
 </body>
 
 </html>
