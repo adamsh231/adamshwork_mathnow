@@ -25,10 +25,20 @@ class DatabaseSeeder extends Seeder
         DB::table('siswa')->insert([
             'id' => '100',
             'name' => 'Adam Syarif Hidayatullah',
-            'username' => 'adamsh231',
-            'password' => bcrypt('dayung231'),
+            'username' => 'admin',
+            'password' => bcrypt('admin'),
             'email' => 'adamsyarif217@yahoo.com',
             'phone' => '082140320499',
+            'status' => 1,
+        ]);
+
+        DB::table('siswa')->insert([
+            'id' => '101',
+            'name' => 'Adam Syarif Hidayatullah (Murid)',
+            'username' => 'user',
+            'password' => bcrypt('user'),
+            'email' => 'adamsyarif217@gmail.com',
+            'phone' => '082140320500',
             'status' => 1,
         ]);
 
