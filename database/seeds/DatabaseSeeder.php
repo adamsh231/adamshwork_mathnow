@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('user'),
             'email' => 'adamsyarif217@gmail.com',
             'phone' => '082140320500',
-            'status' => 1,
+            'status' => 0,
         ]);
 
         for ($i = 1; $i <= $jml_siswa; $i++) {
